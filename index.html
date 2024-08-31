@@ -14,7 +14,7 @@
             padding: 0;
         }
         header {
-            background: #333;
+            background: #000000;
             color: #fff;
             padding: 10px 0;
             text-align: center;
@@ -45,11 +45,11 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: none; /* Ocultar secciones por defecto */
+            display: none; 
             margin-bottom: 20px;
         }
         footer {
-            background: #333;
+            background: #000000;
             color: #fff;
             text-align: center;
             padding: 10px 0;
@@ -62,7 +62,7 @@
             height: auto;
         }
         h1, h2 {
-            color: #333;
+            color: #eb9800;
         }
     </style>
 </head>
@@ -102,22 +102,18 @@
         <p>&copy; 2024 Counter-Strike 2 Fan Page. Todos los derechos reservados.</p>
     </footer>
     <script>
-        // Función para mostrar la sección correspondiente
         function showSection(sectionId) {
-            // Ocultar todas las secciones
             var sections = document.querySelectorAll('.main-content');
             sections.forEach(function(section) {
                 section.style.display = 'none';
             });
 
-            // Mostrar la sección seleccionada
             var selectedSection = document.getElementById(sectionId);
             if (selectedSection) {
                 selectedSection.style.display = 'block';
             }
         }
 
-        // Mostrar la primera sección por defecto
         document.addEventListener('DOMContentLoaded', function() {
             showSection('overview');
         });
