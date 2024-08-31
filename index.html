@@ -3,10 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primer Proyecto</title>
+    <title>Counter-Strike 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .main-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none; /* Ocultar secciones por defecto */
+            margin-bottom: 20px;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        h1, h2 {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hola Mundo</h1>
-    <p>Este es un ejemplo básico de un proyecto HTML.</p>
+    <header>
+        <h1>Counter-Strike 2</h1>
+        <nav>
+            <ul>
+                <li><a href="#overview" onclick="showSection('overview')">Descripción</a></li>
+                <li><a href="#features" onclick="showSection('features')">Características</a></li>
+                <li><a href="#download" onclick="showSection('download')">Descarga</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div id="overview" class="main-content">
+            <h2>Descripción</h2>
+            <p>Counter-Strike 2 es la última entrega de la icónica serie de juegos de disparos en primera persona. Desarrollado por Valve Corporation, el juego lleva la acción competitiva y táctica a un nuevo nivel con gráficos mejorados y nuevas mecánicas de juego. En Counter-Strike 2, los jugadores se enfrentan en intensas batallas entre equipos de terroristas y contrarrevolucionarios en diversos mapas y modos de juego.</p>
+            <img src="cs2.jpg" alt="Captura de pantalla de Counter-Strike 2">
+        </div>
+        <div id="features" class="main-content">
+            <h2>Características</h2>
+            <ul>
+                <li><strong>Gráficos Mejorados:</strong> Disfruta de gráficos de última generación que mejoran la experiencia de juego.</li>
+                <li><strong>Nuevas Mecánicas:</strong> Experimenta nuevas mecánicas de juego y tácticas que ofrecen una jugabilidad fresca.</li>
+                <li><strong>Mapas Renovados:</strong> Explora mapas rediseñados y nuevos entornos para mantener la acción siempre interesante.</li>
+                <li><strong>Modos de Juego Diversos:</strong> Juega en una variedad de modos, desde los clásicos hasta nuevas variantes.</li>
+            </ul>
+        </div>
+        <div id="download" class="main-content">
+            <h2>Descarga</h2>
+            <p>Counter-Strike 2 está disponible para descarga en la plataforma Steam. Para adquirir el juego, simplemente visita la página oficial de Counter-Strike 2 en Steam y sigue las instrucciones para la compra y descarga.</p>
+            <a href="https://store.steampowered.com/app/counter-strike-2" target="_blank">Descargar Counter-Strike 2 en Steam</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Counter-Strike 2 Fan Page. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        // Función para mostrar la sección correspondiente
+        function showSection(sectionId) {
+            // Ocultar todas las secciones
+            var sections = document.querySelectorAll('.main-content');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            // Mostrar la sección seleccionada
+            var selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+        }
+
+        // Mostrar la primera sección por defecto
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('overview');
+        });
+    </script>
 </body>
 </html>
